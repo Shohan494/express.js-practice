@@ -12,6 +12,10 @@ var users = require('./routes/users');
 //using express.Router
 var birds = require('./routes/birds')
 
+//var mw = require('./middleware/my-middleware.js')
+//app.use(mw({ option1: '1', option2: '2' }))
+
+
 var app = express();
 
 // view engine setup
@@ -30,7 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-app.use('/birds', birds)
+app.use('/birds', birds);
+//app.use('/mw', mw);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

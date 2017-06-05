@@ -14,4 +14,6 @@
 
 - middleware function inside routes folder is working
 
+- Trying configurable middleware
+
 By - [Shohanul Alam](https://github.com/Shohan494)
