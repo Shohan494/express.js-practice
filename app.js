@@ -30,12 +30,32 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// this worked because of putting in front of other functions
+app.use(function (req, res, next) {
+  console.log('It is working.. Time:', Date.now())
+  next()
+})
+
+any routes declared in the same path name
+app.use('/birds', function (req, res, next) {
+  res.send('USER')
+  next()
+})
+
 // initial routing paths
 app.use('/', index);
 app.use('/users', users);
 
 app.use('/birds', birds);
 //app.use('/mw', mw);
+
+/* this middleware does not run if there is
+any routes declared in the same path name
+app.use('/birds', function (req, res, next) {
+  res.send('USER')
+  next()
+})
+*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

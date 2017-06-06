@@ -3,10 +3,10 @@
 ## Project Workflow
 
 - Created express-app with command 
-	express --view=pug myapp
+		express --view=pug myapp
 
 - Installed module and fired the app
-	DEBUG=express-test:* npm start
+		DEBUG=express-test:* npm start
 
 - Basic commenting done about route path variable included in app.js and sending data to pug template
 
